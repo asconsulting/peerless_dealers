@@ -95,7 +95,7 @@ class Dealer extends \Backend
 	 */
 	public function toggleVisibility($intId, $blnVisible, DataContainer $dc=null)
 	{
-		$objVersions = new Versions('tl_peerless_dealers', $intId);
+		$objVersions = new \Versions('tl_peerless_dealers', $intId);
 		$objVersions->initialize();
 
 		// Trigger the save_callback

@@ -1,0 +1,9 @@
+<?php $this->block('content'); ?>
+
+  <?php if (empty($this->items)): ?>
+    <p class="empty"><?= $this->empty ?></p>
+  <?php else: ?>
+    <?= implode('', $this->items) ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>

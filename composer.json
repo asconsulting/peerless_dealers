@@ -1,0 +1,36 @@
+{
+    "name":"asconsulting/peerless_dealers",
+    "description":"Peerless Handcuffs dealer database module for Contao 4+",
+    "homepage": "https://andrewstevens.consulting",
+    "keywords":["contao", "peerless", "handcuffs", "dealer", "locator"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
+        {
+            "name":"Andrew Stevens",
+            "homepage":"https://andrewstevens.consulting"
+        }
+    ],
+    "require":{
+        "php": "~5.4 || ~7.0",
+        "contao/core-bundle": "^3.5.2 || ~4.4"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Isotope\\": [
+                "system/modules/peerless_dealers/library"
+            ]
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/peerless_dealers": "system/modules/peerless_dealers"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}

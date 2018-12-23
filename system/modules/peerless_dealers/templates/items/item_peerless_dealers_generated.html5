@@ -1,0 +1,7 @@
+
+<div class="item_full block<?= $this->class ?>">
+  <?php foreach($this->item as $label => $value): ?>
+	<div class='label'><?php echo $label; ?></div>
+	<div class='value'><?php echo $value; ?></div>
+  <?php endforeach; ?>
+</div>

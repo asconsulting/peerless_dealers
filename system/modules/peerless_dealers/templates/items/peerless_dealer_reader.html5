@@ -1,0 +1,10 @@
+<div class="dealer<?= $this->class ?>">
+	<h4 class="name"><?= $this->name ?></h4>
+	<?php if ($this->url != ''): ?><a href="http://<?= $this->url ?>" target="_blank"><?= $this->url ?></a><?php endif; ?>
+	<?php if ($this->address != ''): ?><div class='address'><?= $this->address ?></div><?php endif; ?>
+	<?php if ($this->phone != ''): ?><div class='phone'><strong>Phone:</strong> <?= $this->phone ?></div><?php endif; ?>
+	<?php if ($this->fax != ''): ?><div class='fax'><strong>Fax:</strong> <?= $this->fax ?></div><?php endif; ?>
+	<?php if ($this->email != ''): ?><div class='email'><strong>Email:</strong> <a href="mailto:<?= $this->email ?>"><?= $this->email ?></a></div><?php endif; ?>
+	<div class="directions"><a href="http://maps.google.com/maps?f=d&daddr=<?= $this->address ?>&ie=UTF8&z=15" onclick="window.open(this.href); return false;">Get Directions</a></div>
+	<?php if ($this->calculated_distance != ''): ?><div class='distance'><?= number_format($this->calculated_distance, 2, ".", ",") ?> miles away.</div><?php endif; ?>
+</div>

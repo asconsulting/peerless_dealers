@@ -1,9 +1,9 @@
 <?php $this->block('content'); ?>
 
-  <?php if (empty($this->items)): ?>
+  <?php if (empty($this->dealers)): ?>
     <p class="empty"><?= $this->empty ?></p>
   <?php else: ?>
-    <?= implode('', $this->items) ?>
+    <?= implode('', $this->dealers) ?>
   <?php endif; ?>
 
 <?php $this->endblock(); ?>

@@ -13,9 +13,9 @@
 namespace Peerless\Backend;
 
 /**
- * Class Peerless\Backend\Dealer
+ * Class Peerless\Backend\Dealers
  */ 
-class Dealer extends \Backend
+class Dealers extends \Backend
 {
 
 	/**

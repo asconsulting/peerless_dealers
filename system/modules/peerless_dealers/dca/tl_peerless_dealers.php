@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 				'label'               => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('Peerless\Backend\Dealer', 'toggleIcon')
+				'button_callback'     => array('Peerless\Backend\Dealers', 'toggleIcon')
 			),
             'show' => array
             (
@@ -124,7 +124,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'eval'                    => array('unique'=>true, 'rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'save_callback' => array
 			(
-				array('Peerless\Backend\Dealer', 'generateAlias')
+				array('Peerless\Backend\Dealers', 'generateAlias')
 			),
 			'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
 

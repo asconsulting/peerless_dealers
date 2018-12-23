@@ -28,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['customDealerTpl'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['customDealerTpl'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('Peerless\Backend\Dealer', 'getDealerTemplates'),
+	'options_callback'        => array('Peerless\Backend\Dealers', 'getDealerTemplates'),
 	'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );

@@ -96,7 +96,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{dealer_legend},alias,name,address,phone,phone_2,fax,email,url,description;{location_legend},latitude,longitude;{publish_legend},published;'
+        'default'                     => '{dealer_legend},name,alias,address,phone,phone_2,fax,email,url,description;{location_legend},latitude,longitude;{publish_legend},published;'
     ),
  
     // Fields
@@ -134,14 +134,14 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['name'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'address' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['address'],
 			'inputType'               => 'text',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr long'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'phone' => array
@@ -149,7 +149,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['phone'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'phone_2' => array
@@ -157,7 +157,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['phone_2'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'fax' => array
@@ -165,7 +165,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['fax'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'email' => array
@@ -173,7 +173,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['email'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'url' => array
@@ -181,14 +181,14 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['url'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'description' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['description'],
 			'inputType'               => 'textarea',
-			'eval'                    => array('rows'=>4, 'cols'=>40),
+			'eval'                    => array('rows'=>4, 'cols'=>40, 'tl_class'=>'clr long'),
 			'sql'                     => "mediumtext NULL"
 		),
 		'latitude' => array
@@ -196,7 +196,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['latitude'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'longitude' => array
@@ -204,7 +204,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['longitude'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array(),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'published' => array
@@ -212,7 +212,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'exclude'                 => true,
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['published'],
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true),
+			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true,'tl_class'=>'clr m12'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		)		
     )

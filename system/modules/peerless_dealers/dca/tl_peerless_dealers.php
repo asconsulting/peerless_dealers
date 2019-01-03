@@ -173,7 +173,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['email'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'clr w50'),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'url' => array
@@ -181,7 +181,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['url'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'w50'),
+			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'description' => array

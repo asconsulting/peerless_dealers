@@ -25,7 +25,7 @@ class Dealers extends \Backend
 	 * @return string
 	 * @throws \Exception
 	 */
-	public function generateAlias($varValue, DataContainer $dc)
+	public function generateAlias($varValue, \DataContainer $dc)
 	{
 		$autoAlias = false;
 		
@@ -33,11 +33,8 @@ class Dealers extends \Backend
 		if ($varValue == '')
 		{
 			$autoAlias = true;
-			if ($strFieldToAlias != '') {
-				$varValue = standardize(\StringUtil::restoreBasicEntities($dc->activeRecord->name));
-			} else {
-				$varValue = standardize(\StringUtil::restoreBasicEntities(md5(uniqid() .$dc->activeRecord->id)));
-			}
+			$varValue = standardize(\StringUtil::restoreBasicEntities($dc->activeRecord->name));
+			
 		}
 
 		$objAlias = $this->Database->prepare("SELECT id FROM tl_peerless_dealers WHERE id=? OR alias=?")
@@ -93,7 +90,7 @@ class Dealers extends \Backend
 	 * @param boolean
 	 * @param \DataContainer
 	 */
-	public function toggleVisibility($intId, $blnVisible, DataContainer $dc=null)
+	public function toggleVisibility($intId, $blnVisible, \DataContainer $dc=null)
 	{
 		$objVersions = new \Versions('tl_peerless_dealers', $intId);
 		$objVersions->initialize();

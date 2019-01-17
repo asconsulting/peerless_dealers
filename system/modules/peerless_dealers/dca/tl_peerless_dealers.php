@@ -21,6 +21,10 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
     (
         'dataContainer'               => 'Table',
         'enableVersioning'            => true,
+		'onsubmit_callback' => array
+		(
+			array('Peerless\Backend\Dealers', 'geocode')
+		),
         'sql' => array
         (
             'keys' => array

@@ -12,6 +12,8 @@
 
 namespace Peerless\Backend;
 
+use MapUtilities\Location;
+
 /**
  * Class Peerless\Backend\Dealers
  */ 
@@ -53,8 +55,31 @@ class Dealers extends \Backend
 
 		return $varValue;
 	}
-	
 
+	
+	/**
+	 * Auto-generate an article alias if it has not been set yet
+	 * @param mixed
+	 * @param \DataContainer
+	 * @return string
+	 * @throws \Exception
+	 */
+	public function geocode(\DataContainer $dc)
+	{
+		if ($dc->activeRecord->address && ($dc->activeRecord->latitude == "" || $dc->activeRecord->longitude == ""))
+		{
+			$objLocation = new Location();
+			$objLocation->setAddress($dc->activeRecord->address);
+			if ($objLocation->geocode()) {
+				$this->Database->prepare("UPDATE tl_peerless_dealers SET latitude=?, longitude=? WHERE id=?")
+					   ->execute($objLocation->get('latitude'), $objLocation->get('longitude'), $dc->id);
+				$dc->activeRecord->latitude = $objLocation->get('latitude');
+				$dc->activeRecord->longitude = $objLocation->get('longitude');
+			}
+		}
+	}
+
+	
 	/**
 	 * Return the "toggle visibility" button
 	 * @param array

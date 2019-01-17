@@ -31,8 +31,8 @@ $GLOBALS['TL_LANG']['tl_peerless_dealers']['fax'] 				= array('Fax', 'Fax');
 $GLOBALS['TL_LANG']['tl_peerless_dealers']['email'] 			= array('Email', 'Email');
 $GLOBALS['TL_LANG']['tl_peerless_dealers']['url'] 				= array('Website', 'Website');
 $GLOBALS['TL_LANG']['tl_peerless_dealers']['description'] 		= array('Description', 'Description');
-$GLOBALS['TL_LANG']['tl_peerless_dealers']['latitude'] 			= array('Latitude Coordinates', 'Latitude Coordinates');
-$GLOBALS['TL_LANG']['tl_peerless_dealers']['longitude'] 		= array('Longitude Coordinates', 'Longitude Coordinates');
+$GLOBALS['TL_LANG']['tl_peerless_dealers']['latitude'] 			= array('Latitude Coordinates', 'Latitude Coordinates. (Will auto-populate from address field when saved.)');
+$GLOBALS['TL_LANG']['tl_peerless_dealers']['longitude'] 		= array('Longitude Coordinates', 'Longitude Coordinates. (Will auto-populate from address field when saved.)');
 $GLOBALS['TL_LANG']['tl_peerless_dealers']['published'] 		= array('Published', 'Show this dealer on the front end.');
  
  

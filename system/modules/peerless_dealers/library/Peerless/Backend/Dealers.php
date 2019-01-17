@@ -66,7 +66,7 @@ class Dealers extends \Backend
 	 */
 	public function geocode(\DataContainer $dc)
 	{
-		if ($dc->activeRecord->address && ($dc->activeRecord->latitude == "" || $dc->activeRecord->longitude == ""))
+		if ($dc->activeRecord->address && (!$dc->activeRecord->latitude || !$dc->activeRecord->longitude))
 		{
 			$objLocation = new Location();
 			$objLocation->setAddress($dc->activeRecord->address);

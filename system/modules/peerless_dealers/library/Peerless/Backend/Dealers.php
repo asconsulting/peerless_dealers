@@ -12,6 +12,7 @@
 
 namespace Peerless\Backend;
 
+use Contao\Backend as ContaoBackend;
 use Contao\StringUtil;
 use Contao\CoreBundle\Exception
 
@@ -21,7 +22,7 @@ use MapUtilities\Location;
 /**
  * Class Peerless\Backend\Dealers
  */ 
-class Dealers extends \Backend
+class Dealers extends ContaoBackend
 {
 
 	/**

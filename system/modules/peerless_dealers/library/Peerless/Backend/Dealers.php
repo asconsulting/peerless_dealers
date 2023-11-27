@@ -14,7 +14,7 @@ namespace Peerless\Backend;
 
 use Contao\Backend as ContaoBackend;
 use Contao\StringUtil;
-use Contao\CoreBundle\Exception
+use Contao\CoreBundle\Exception;
 
 use MapUtilities\Location;
 

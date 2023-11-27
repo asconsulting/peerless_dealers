@@ -1,9 +1,9 @@
 <?php
-
+ 
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting

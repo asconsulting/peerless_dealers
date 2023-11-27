@@ -3,7 +3,7 @@
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting
@@ -21,6 +21,5 @@ $GLOBALS['TL_LANG']['FMD']['peerless_dealer_reader'] 	= array('Dealers Reader', 
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['peerless'] 					= array('Peerless', 'Peerlesss Modules');
+$GLOBALS['TL_LANG']['MOD']['peerless'] 					= array('Peerless', 'Peerless Modules');
 $GLOBALS['TL_LANG']['MOD']['peerless_dealers'] 			= array('Dealers', 'Configure Peerless Dealers');
-

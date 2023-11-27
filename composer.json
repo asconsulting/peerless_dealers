@@ -12,16 +12,17 @@
         }
     ],
     "require":{
-        "php": "~5.4 || ~7.0",
-        "contao/core-bundle": "^3.5.2 || ~4.4"
+        "php": ">=8.0",
+        "contao/core-bundle": ">=4.13",
+		"asconsulting/map_utilities": ">=0.9"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"
     },
     "autoload": {
-        "psr-0": {
-            "Isotope\\": [
-                "system/modules/peerless_dealers/library"
+        "psr-4": {
+            "Peerless\\": [
+                "system/modules/peerless_dealers/library/Peerless"
             ]
         }
     },

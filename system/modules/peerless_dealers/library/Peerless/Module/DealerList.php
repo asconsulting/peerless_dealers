@@ -3,22 +3,31 @@
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting
  */
  
  
-namespace Contao;
+namespace Peerless\Module;
+
+use Contao\BackendTemplate;
+use Contao\Config;
+use Contao\Date;
+use Contao\FrontendTemplate;
+use Contao\Module as ContaoModule;
+
+use Peerless\Model\Dealer;
+ 
  
 /**
- * Class ModulePeerlessDealersSearch
+ * Class DealerList
  *
  * Front end module "Peerless Dealers List".
  */
  
-class ModulePeerlessDealersSearch extends \Module
+class DealerList extends ContaoModule
 {
  
     /**
@@ -35,9 +44,9 @@ class ModulePeerlessDealersSearch extends \Module
     {
         if (TL_MODE == 'BE')
         {
-            $objTemplate = new \BackendTemplate('be_wildcard');
+            $objTemplate = new BackendTemplate('be_wildcard');
  
-            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['peerless_dealer_list'][0]) . ' ###';
+            $objTemplate->wildcard = '### ' . mb_strtoupper($GLOBALS['TL_LANG']['FMD']['peerless_dealer_list'][0]) . ' ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
             $objTemplate->link = $this->name;
@@ -70,7 +79,7 @@ class ModulePeerlessDealersSearch extends \Module
 		while ($objDealer->next())
 		{
 			$arrDealer = $objDealer->row();
-			$arrDealer['timestamp'] = \Date::parse(\Config::get('datimFormat'), $objDealer->tstamp);
+			$arrDealer['timestamp'] = Date::parse(Config::get('datimFormat'), $objDealer->tstamp);
 			
 			if ($this->jumpTo) {
 				$objTarget = $this->objModel->getRelated('jumpTo');
@@ -78,7 +87,7 @@ class ModulePeerlessDealersSearch extends \Module
 			}
 
 			$strItemTemplate = ($this->customDealerTpl != '' ? $this->customDealerTpl : 'peerless_dealer_list');
-			$objTemplate = new \FrontendTemplate($strItemTemplate);
+			$objTemplate = new FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrDealer);
 			$arrDealers[] = $objTemplate->parse();
 		}

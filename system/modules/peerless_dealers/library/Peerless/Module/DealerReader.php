@@ -3,7 +3,7 @@
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting
@@ -11,7 +11,14 @@
 
  
 namespace Peerless\Module;
- 
+
+use Contao\BackendTemplate;
+use Contao\Config;
+use Contao\Date;
+use Contao\FrontendTemplate;
+use Contao\Module as ContaoModule;
+
+
 use Peerless\Model\Dealer;
  
  
@@ -21,7 +28,7 @@ use Peerless\Model\Dealer;
  * Front end module "Peerless Dealers Reader".
  */
  
-class DealerReader extends \Module
+class DealerReader extends ContaoModule
 {
  
     /**
@@ -38,9 +45,9 @@ class DealerReader extends \Module
     {
         if (TL_MODE == 'BE')
         {
-            $objTemplate = new \BackendTemplate('be_wildcard');
+            $objTemplate = new BackendTemplate('be_wildcard');
  
-            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['peerless_dealer_reader'][0]) . ' ###';
+            $objTemplate->wildcard = '### ' . mb_strtoupper($GLOBALS['TL_LANG']['FMD']['peerless_dealer_reader'][0]) . ' ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
             $objTemplate->link = $this->name;
@@ -69,7 +76,7 @@ class DealerReader extends \Module
 		}
 
 		$arrDealer = $objDealer->row();
-		$arrDealer['timestamp'] = \Date::parse(\Config::get('datimFormat'), $objDealer->tstamp);
+		$arrDealer['timestamp'] = Date::parse(Config::get('datimFormat'), $objDealer->tstamp);
 		
 		if ($this->jumpTo) {
 			$objTarget = $this->objModel->getRelated('jumpTo');
@@ -77,7 +84,7 @@ class DealerReader extends \Module
 		}
 
 		$strItemTemplate = ($this->customDealerTpl != '' ? $this->customDealerTpl : 'peerless_dealer_reader');
-		$objTemplate = new \FrontendTemplate($strItemTemplate);
+		$objTemplate = new FrontendTemplate($strItemTemplate);
 		$objTemplate->setData($arrDealer);
 		$arrItems[] = $objTemplate->parse();
 

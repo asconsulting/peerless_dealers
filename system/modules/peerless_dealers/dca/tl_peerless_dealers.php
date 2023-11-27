@@ -3,7 +3,7 @@
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting
@@ -81,6 +81,12 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
                 'icon'                => 'delete.gif',
                 'attributes'          => 'onclick="if(!confirm(\'' . ($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? null) . '\'))return false;Backend.getScrollOffset()"'
             ),
+			'toggle' => array
+			(
+				'href'                => 'act=toggle&amp;field=published',
+				'icon'                => 'visible.svg'
+			),
+			/*
             'toggle' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['toggle'],
@@ -88,6 +94,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
 				'button_callback'     => array('Peerless\Backend\Dealers', 'toggleIcon')
 			),
+			*/
             'show' => array
             (
                 'label'               => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['show'],
@@ -213,7 +220,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 		),
 		'published' => array
 		(
-			'exclude'                 => true,
+			'toggle'                  => true,
 			'label'                   => &$GLOBALS['TL_LANG']['tl_peerless_dealers']['published'],
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true,'tl_class'=>'clr m12'),

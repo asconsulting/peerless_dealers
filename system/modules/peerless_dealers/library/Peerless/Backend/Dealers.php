@@ -1,9 +1,9 @@
 <?php
-
+ 
 /**
  * Peerless Dealers
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/peerless_dealers
  * @link       https://andrewstevens.consulting
@@ -12,7 +12,11 @@
 
 namespace Peerless\Backend;
 
+use Contao\StringUtil;
+use Contao\CoreBundle\Exception
+
 use MapUtilities\Location;
+
 
 /**
  * Class Peerless\Backend\Dealers
@@ -35,7 +39,7 @@ class Dealers extends \Backend
 		if ($varValue == '')
 		{
 			$autoAlias = true;
-			$varValue = standardize(\StringUtil::restoreBasicEntities($dc->activeRecord->name));
+			$varValue = StringUtil::standardize(StringUtil::restoreBasicEntities($dc->activeRecord->name));
 			
 		}
 
@@ -90,6 +94,7 @@ class Dealers extends \Backend
 	 * @param string
 	 * @return string
 	 */
+	 /*
 	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
 	{
 		if (strlen(\Input::get('tid')))
@@ -107,7 +112,7 @@ class Dealers extends \Backend
 
 		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.\Image::getHtml($icon, $label).'</a> ';
 	}	
-	
+	*/
 	
 	/**
 	 * Disable/enable a user group
@@ -115,6 +120,7 @@ class Dealers extends \Backend
 	 * @param boolean
 	 * @param \DataContainer
 	 */
+	 /*
 	public function toggleVisibility($intId, $blnVisible, \DataContainer $dc=null)
 	{
 		$objVersions = new \Versions('tl_peerless_dealers', $intId);
@@ -144,7 +150,7 @@ class Dealers extends \Backend
 		$objVersions->create();
 		$this->log('A new version of record "tl_peerless_dealers.id='.$intId.'" has been created'.$this->getParentEntries('tl_peerless_dealers', $intId), __METHOD__, TL_GENERAL);
 	}		
-
+	*/
 
 	/**
 	 * Return all item templates as array

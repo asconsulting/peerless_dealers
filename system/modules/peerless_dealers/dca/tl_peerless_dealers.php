@@ -137,7 +137,7 @@ $GLOBALS['TL_DCA']['tl_peerless_dealers'] = array
 			(
 				array('Peerless\Backend\Dealers', 'generateAlias')
 			),
-			'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
+			'sql'                     => "varchar(255) BINARY NOT NULL default ''"
 
 		),
 		'name' => array

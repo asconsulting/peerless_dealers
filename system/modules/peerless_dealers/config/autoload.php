@@ -13,6 +13,7 @@
 /**
  * Register the classes
  */
+ /*
 ClassLoader::addClasses(array
 (
 	'Peerless\Backend\Dealers' 		=> 'system/modules/peerless_dealers/library/Peerless/Backend/Dealers.php',
@@ -20,7 +21,7 @@ ClassLoader::addClasses(array
     'Peerless\Module\DealerList' 	=> 'system/modules/peerless_dealers/library/Peerless/Module/DealerList.php',
 	'Peerless\Module\DealerReader' 	=> 'system/modules/peerless_dealers/library/Peerless/Module/DealerReader.php',
 ));
-
+*/
 
 /**
  * Register the templates

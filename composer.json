@@ -14,7 +14,7 @@
     "require":{
         "php": ">=8.0",
         "contao/core-bundle": ">=4.13",
-		"asconsulting/map_utilities": ">=0.9"
+		"asconsulting/map_utilities": "@dev-master"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"
